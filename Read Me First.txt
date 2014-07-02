@@ -1,0 +1,7 @@
+This theme is to be used on a Drupal 7.x- install.
+
+Place the unsw (theme) folder into the Drupal sites -> all -> themes directory.
+
+Additional requirements:
+
+Zen (version 7.x-) theme which can be downloaded from https://www.drupal.org/project/zen

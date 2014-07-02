@@ -1,0 +1,374 @@
+/* Basic page stuff */
+@import "init";
+
+body{
+  background-color: $body-background;
+  color: #333;
+  padding: 0;
+}
+#page{
+  background-color: $page-background;
+}
+/* Corporate header*/
+#header{
+  border-bottom: 10px solid $corporate-yellow;
+  min-height: 110px;
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  #header-inner{
+    max-width: $content-max;
+    position: relative;
+    margin: 30px auto 30px auto;
+    overflow: hidden;
+  }
+  #logo{
+    float: left;
+    padding-right: 20px;
+    margin-right: 20px;
+    border-right: 1px solid #333;
+    width: 191px;
+    height: 70px;
+  }
+  #name-and-slogan{
+    h1{
+      font-size: 35px;
+      a{
+        font-weight: normal;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 640px){
+  #header{
+    text-align: center;
+    #logo{
+      float: none;
+      border: none;
+      margin-right: 0;
+      padding-right: 0;
+      img{
+        width: 191px;
+        height: 70px;
+      }
+    }
+    #name-and-slogan{
+      clear: both;
+      float: none;
+    }
+    #block-unswsearchbox-header-search{
+      clear: both;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+/* Main Menu */
+#navigation{
+  @include background-image(linear-gradient($darkestgrey, $darkgrey));
+  height: 39px;
+  padding: 0 10px;
+  padding-top: 5px;
+  ul.nice-menu{
+    a{
+      text-decoration: none;
+      display: block;
+      font-size: 15px;
+      line-height: 16px;
+      color: white;
+      height: 16px;
+      padding: 8px 40px 10px 40px;
+      &:hover{
+        background-color: white;
+        color: $darkestgrey;
+      }
+    }
+  }
+}
+#navigation ul.nice-menu, ul.nice-menu ul, ul.nice-menu-down li{
+  border: none;
+  background-color: transparent;
+}
+#navigation ul.nice-menu-down li.menuparent:hover, ul.nice-menu-down li.menuparent{
+  background-color: transparent;
+  background-image: none;
+}
+#navigation ul.nice-menu li.menuparent ul{
+  border: 4px solid #ccc;
+  a{
+    color: $corporate-blue;
+  }
+  background-color: #fafafa;
+}
+ul.nice-menu ul{
+  top: 34px;
+}
+/* Corporate footer */
+#footer{
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 11px;
+  line-height: 16px;
+  color: #888888;
+  background: #231f20;
+  position: relative;
+  border-bottom: 5px solid $corporate-yellow;
+  p{
+    margin: 5px 0;
+  }
+  ul{
+    padding-left: 0;
+  }
+  h2{
+    display: none;
+  }
+  h4{
+    margin: 0 0 0 5px;
+  }
+  #block-menu-menu-footer ul.menu {
+    list-style-type: none;
+    font-weight: normal; 
+    margin: 0;
+  }
+  #block-menu-menu-footer ul.menu li {
+    display: block;
+    float: left;
+    margin: 0;
+  }
+  #block-menu-menu-footer ul.menu a {
+    display: block;
+    padding: 0 10px;
+    border-left: 1px solid #fc0;
+  }
+  #block-menu-menu-footer ul.menu li.first a {
+    padding-left: 0;
+    border-left: 0;
+  }
+  #block-menu-menu-footer ul.menu a:link, #block-menu-menu-footer ul.menu a:visited, #block-menu-menu-footer ul.menu a:active {
+    color: $corporate-yellow;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  #block-menu-menu-footer ul.menu a:hover {
+    color: $corporate-yellow;
+    text-decoration: underline;
+  }
+}
+
+/* Corporate subfooter */
+#footer-group-wrapper{
+  background-color: #ededed;
+  color: #4f4f4f;
+  padding: 0 10px 20px 10px;
+  #footer-group {
+    padding: 20px 0 10px 0;
+    width: 100%;
+    font-size: 11px;
+    line-height: 14px;
+    overflow: hidden;
+    border-bottom: 1px dotted #ccc;
+    color: #4f4f4f;
+    font-size: 0.9em;
+    text-align: center;
+    ul{
+      float: right;
+      list-style: none;
+      list-style-image: none;
+      padding: 0;
+      margin: 0;
+      font-size: 11px;
+      width: 100%;
+      li{
+        width: 170px;
+        float: left;
+        margin-left: 5px;
+        vertical-align: top;
+        @media all and (max-width: 480px){
+          float: none;
+        }
+        height: 60px;
+        &.first{
+          margin-left: 0;
+          width: 160px;
+        }
+        a{
+          text-decoration: none;
+          display: block;
+          padding: 15px 10px 10px 40px;
+          color: #666;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        &.go8 a{
+          background: url(../images/icons/logo-go8.png) no-repeat 0px 5px;
+          padding: 0px 10px 0px 70px;
+        }
+        &.uni21 a{
+          background: url(../images/icons/logo-uni21.png) no-repeat 0px 3px;
+          padding-top: 10px;
+        }
+        &.gt{
+          width: 205px;
+          a{
+            background: url(../images/icons/logo-globaltech.png) no-repeat 0px 0;
+            padding-left: 65px;
+            padding-top: 0;
+          }
+        }
+        &.apru {
+          width: 235px;
+          a{
+            background: url(../images/icons/logo-apru.png) no-repeat 0px 5px;
+            padding-left: 110px;
+            padding-top: 0;
+          }
+        }
+        &.empl-women {
+          width: 140px;
+          a{
+            background: url(../images/icons/logo-women.png) no-repeat 0px 0;
+            padding-top: 0;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+/* Share links */
+
+/** Social Media icons **/
+#block-boxes-unsw-social-icons{
+  width: 330px;
+  margin-top: 0px;
+  float: right;
+  p{
+    margin: 0;
+  }
+  .boxes-box-controls{
+    display: none;
+  }
+  span{
+    font-weight: bold;
+  }
+  ul{
+    padding-left: 0;
+    margin: 0;
+    &:after{
+      clear: both;
+      content: ".";
+      display: block;
+      height: 0;
+      visibility: hidden;
+    }
+    li {
+      width: 95px;
+      padding: 5px 0;
+      display: block;
+      float: left;
+      a{
+        font-weight: normal;
+        text-decoration: none;
+        color: $corporate-yellow;
+        &:hover{
+          text-decoration: underline;
+        }
+        &.facebook{
+          background: url(../images/icons/socialnetwork2.png) no-repeat 0px -2px;
+          padding: 5px 0px 5px 30px;
+        }
+        &.twitter{
+          background: url(../images/icons/socialnetwork2.png) no-repeat 0px -31px;
+          padding: 5px 0px 5px 30px;
+        }
+        &.googleplus{
+          background: url(../images/icons/socialnetwork2.png) no-repeat 0px -120px;
+          padding: 5px 0px 5px 30px;
+        }
+        &.itunesu{
+          background: url(../images/icons/socialnetwork2.png) no-repeat 0px -61px;
+          padding: 5px 0px 5px 30px;
+        }
+        &.youtube{
+          background: url(../images/icons/socialnetwork2.png) no-repeat 0px -90px;
+          padding: 5px 0px 5px 30px;
+        }
+        &.linkedin{
+          background: url(../images/icons/socialnetwork2.png) no-repeat 0px -148px;
+          padding: 5px 0px 5px 30px;
+        }
+      }
+    }
+  }
+  ul.menu li.leaf.long{
+    width: 115px;
+  }
+  ul.menu li a{
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #FDCC00;
+  }
+
+}
+#block-unswlatestupdated-footer{
+  clear: both;
+}
+#block-boxes-unsw-footer-text{
+  width: 360px;
+  padding-top: 10px;
+}
+#block-unswsearchbox-header-search{
+  right: 0px;
+  top: 0px;
+  height: 65px;
+  input[type=text]{
+    height: 24px;
+  }
+}
+@media all and (max-width: 850px){
+  #block-unswsearchbox-header-search{
+    position: relative;
+    float: right;
+    margin-right: 20px;
+  }
+}
+@media all and (max-width: 720px){
+  #block-boxes-unsw-social-icons,
+  #block-unswiconbar-iconbar-footer #icons,
+  #footer .block{
+    float: none !important;
+    clear: both !important;
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+  }
+  #block-menu-menu-footer{
+    text-align: center;
+  }
+}
+p#back-to-top{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  background: transparent url(../images/back-to-top-arrow.png) 70px 0 no-repeat;
+  width: 86px;
+  margin: 0;
+  a{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
