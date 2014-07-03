@@ -7,6 +7,33 @@
  * @see https://drupal.org/node/1728096
  */
 
+/**
+* Implements theme_image_formatter().
+*/
+function unsw_image_formatter($variables) {
+  /* alt and title support for file entities is only in a premature state at the moment 
+   * (see: http://drupal.org/node/1553094#comment-6277394)
+   * to support image fields with image formatter, we override the theme function and override the
+   * alt and title values with the field values
+   */
+  //print_r (array_keys($variables['item']));
+  if ($variables['item']['alt'] == "") {
+    $variables['item']['alt'] = str_replace(".jpg","",$variables['item']['filename']);
+    $variables['item']['alt'] = str_replace(".gif","",$variables['item']['alt']);
+    $variables['item']['alt'] = str_replace(".png","",$variables['item']['alt']);
+  }
+  
+  if ($variables['item']['title'] == "") {
+    $variables['item']['title'] = str_replace(".jpg","",$variables['item']['filename']);
+    $variables['item']['title'] = str_replace(".gif","",$variables['item']['title']);
+    $variables['item']['title'] = str_replace(".png","",$variables['item']['title']);
+  }
+  /*
+  if (!empty($variables['item']['field_file_image_title_text'])) {
+    $variables['item']['title'] = $variables['item']['field_file_image_title_text'][LANGUAGE_NONE][0]['value'];
+  }*/
+  return theme_image_formatter($variables);
+}
 
 /**
  * Override or insert variables into the maintenance page template.
