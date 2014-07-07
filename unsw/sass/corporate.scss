@@ -9,18 +9,27 @@ body{
 #page{
   background-color: $page-background;
 }
+a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+
 /* Corporate header*/
 #header{
   border-bottom: 10px solid $corporate-yellow;
   min-height: 110px;
   background-color: white;
-  width: 100%;
+  width: 1170px;
+  padding: 0;
   margin: 0 auto;
   position: relative;
   #header-inner{
     max-width: $content-max;
     position: relative;
-    margin: 30px auto 30px auto;
+    margin: 20px auto;
     overflow: hidden;
   }
   #logo{
@@ -32,6 +41,7 @@ body{
     height: 70px;
   }
   #name-and-slogan{
+    padding-top: 10px;
     h1{
       font-size: 35px;
       a{
@@ -68,24 +78,44 @@ body{
     }
   }
 }
+
+
 /* Main Menu */
 #navigation{
   @include background-image(linear-gradient($darkestgrey, $darkgrey));
-  height: 39px;
-  padding: 0 10px;
-  padding-top: 5px;
+  height: 40px;
+  padding: 0;
   ul.nice-menu{
+    li.first {
+      background: transparent url("../images/navmenu/home.png") no-repeat 24px 12px;
+      a{
+        text-indent: -1000px;
+        padding: 0 25px;
+        width: 10px;
+        &:hover{
+          background: #fac800 url("../images/navmenu/home-active.png") no-repeat 24px 12px;
+          -webkit-box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
+          -moz-box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
+          box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
+        }
+      }
+    }
     a{
+      color: #FFFFFF;
       text-decoration: none;
+      text-shadow: 0 -1px 0 #121314; 
+      font-size: 1.1em;
+      font-weight: bold;
+      line-height: 40px;
+      padding: 0 23px;
       display: block;
-      font-size: 15px;
-      line-height: 16px;
-      color: white;
-      height: 16px;
-      padding: 8px 40px 10px 40px;
+      border-right: 1px solid #474747;
       &:hover{
-        background-color: white;
-        color: $darkestgrey;
+        background-color: #fac800;
+        color: $darkgrey;
+        -webkit-box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
+        -moz-box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
+        box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
       }
     }
   }
@@ -108,19 +138,73 @@ body{
 ul.nice-menu ul{
   top: 34px;
 }
+
+
+/* Breadcrumbs */
+#breadcrumb{
+  padding: 20px 0 15px 0;
+  position: relative;
+}
+.breadcrumbs {
+  padding: 0;
+  color: #1F1F1F;
+}
+ul.breadcrumbs {
+    font-size: 12px;
+    list-style: none outside none;
+    margin: 0;
+}
+ul.breadcrumbs li {
+    float: left;
+    height: 22px;
+    margin: 0 0 0 -9px;
+    padding-left: 20px;
+}
+ul.breadcrumbs li a,
+ul.breadcrumbs li span{
+    background: url("../images/breadcrumb/crumb.png") no-repeat right center;
+    float: left;
+    line-height: 22px;
+    padding: 0 20px 0 0;
+    color: #878787;
+}
+ul.breadcrumbs li.first {
+    margin-left: 0;
+    padding: 0;
+}
+ul.breadcrumbs li.first a {
+    padding-left: 5px;
+}
+ul.breadcrumbs li.last {
+    color: #878787;
+}
+ul.breadcrumbs li.last span {
+    background: none;
+    display: block;
+    line-height: 24px;
+    margin: -1px -9px 0 0;
+    padding-right: 20px;
+}
+
+
+
+/* Corporate Main Content */
+#main > #content{
+  padding: 0 30px;
+}
+
+
+
 /* Corporate footer */
 #footer{
-  padding-top: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 25px 30px 25px 30px;
   font-size: 11px;
   line-height: 16px;
   color: #888888;
   background: #231f20;
   position: relative;
-  border-bottom: 5px solid $corporate-yellow;
   p{
-    margin: 5px 0;
+    margin: 0;
   }
   ul{
     padding-left: 0;
@@ -131,24 +215,29 @@ ul.nice-menu ul{
   h4{
     margin: 0 0 0 5px;
   }
+  #block-menu-menu-footer ul.menu:after{
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
   #block-menu-menu-footer ul.menu {
     list-style-type: none;
     font-weight: normal; 
     margin: 0;
+    padding: 0;
   }
   #block-menu-menu-footer ul.menu li {
-    display: block;
-    float: left;
+    list-style: none outside none;
     margin: 0;
+    padding-bottom: 20px;
   }
   #block-menu-menu-footer ul.menu a {
     display: block;
-    padding: 0 10px;
-    border-left: 1px solid #fc0;
   }
-  #block-menu-menu-footer ul.menu li.first a {
-    padding-left: 0;
-    border-left: 0;
+  #block-menu-menu-footer ul.menu li.last {
+    padding-bottom: 0;
   }
   #block-menu-menu-footer ul.menu a:link, #block-menu-menu-footer ul.menu a:visited, #block-menu-menu-footer ul.menu a:active {
     color: $corporate-yellow;
@@ -317,16 +406,52 @@ ul.nice-menu ul{
   }
 
 }
-#block-unswlatestupdated-footer{
+#block-menu-menu-footer{
+  float: left;
+  width: 25%;
+}
+#block-menu-menu-unsw-resources .content ul:after {
   clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+#block-menu-menu-unsw-resources .content ul {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+#block-menu-menu-unsw-resources .content ul li{
+  list-style: none outside none;
+  margin: 0;
+  padding-bottom: 7px;
+}
+#block-menu-menu-unsw-resources .content ul li.last{
+  padding-bottom: 0;
+}
+#block-menu-menu-unsw-resources .content ul li a{
+  display: block;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.connect-block{
+  float: right;
+}
+.connect-block .text-center{
+  
+}
+#block-unswlatestupdated-footer{
+  float: left;
+  width: 40%;
 }
 #block-boxes-unsw-footer-text{
-  width: 360px;
-  padding-top: 10px;
+  width: 40%;
+  float: left;
+  margin: 0;
 }
 #block-unswsearchbox-header-search{
-  right: 0px;
-  top: 0px;
   height: 65px;
   input[type=text]{
     height: 24px;

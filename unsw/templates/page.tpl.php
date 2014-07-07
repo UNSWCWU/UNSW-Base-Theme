@@ -13,7 +13,7 @@
   <div id="header-inner">
 
     <?php if ($logo): ?>
-      <a href="http://unsw.edu.au" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+      <a href="http://unsw.edu.au" title="<?php print t('UNSW'); ?>" rel="UNSW" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('UNSW'); ?>" class="header__logo-image" /></a>
     <?php endif; ?>
 
     <?php if ($site_name || $site_slogan): ?>
@@ -53,14 +53,26 @@
 <div id="page">
 
   <div id="main">
+    
+    <?php if ($is_front): ?> 
+      <?php if ($page['banner']): ?>        
+        <?php print render($page['banner']); ?>
+      <?php endif; ?>
+    <?php endif; ?> 
 
     <div id="content" class="column" role="main">
       <?php print render($page['highlighted']); ?>
-      <?php print $breadcrumb; ?>
+      <?php if (!$is_front): ?>
+        <?php if ($breadcrumb): ?>
+          <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+        <?php endif; ?>
+      <?php endif; ?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+      <?php if (!$is_front): ?>
+        <?php if ($title): ?>
+          <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+        <?php endif; ?>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>

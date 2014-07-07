@@ -8,6 +8,73 @@
  */
 
 /**
+ * Return a themed breadcrumb trail.
+ *
+ * @param $breadcrumb
+ *   An array containing the breadcrumb links.
+ * @return a string containing the breadcrumb output.
+ */
+function unsw_breadcrumb($breadcrumb) {
+  $breadcrumb = $breadcrumb['breadcrumb'];
+  
+  // modify for search page
+  $b = implode('/', $breadcrumb);
+  if (strip_tags($b) == 'Home/Search/Content') {
+    $breadcrumb = array(l(t('Home'), '<front>'));
+  }
+  
+  // Rename Home
+  if(!empty($breadcrumb)){
+    array_shift($breadcrumb);
+    array_unshift($breadcrumb, l(t('Home'), '<front>'));
+  }
+
+  if(!count($breadcrumb)){
+    return;
+  }
+  
+  $title = drupal_get_title();
+  $breadcrumb[] = truncate_utf8($title, 30, TRUE, TRUE, 1) ;
+  $num_of_breadcrumbs = count($breadcrumb);
+  $breadcrumb_items = '';
+  
+  for ($i = 0; $i < $num_of_breadcrumbs; $i++) {
+    if (substr($breadcrumb[$i], 0, 2) != '<a') {
+      $breadcrumb[$i] = '<span>' . $breadcrumb[$i] . '</span>';
+    }
+    
+    if (strpos($breadcrumb[$i], 'nolink') !== FALSE ) {
+      $breadcrumb[$i] = '<span>' . strip_tags($breadcrumb[$i]) . '</span>';
+    }
+
+    $name = $breadcrumb[$i];
+    $class = array();
+    if ($i == 0) {
+      $class[] = 'first';
+    }elseif ($i == $num_of_breadcrumbs - 2) {
+      $class[] = '2last';
+    }elseif ($i == $num_of_breadcrumbs - 1 ) {
+      $class[] = 'last';
+      $name = '<span>'.strip_tags($name).'</span>';
+    }
+
+    if(!empty($class)){
+      $class = 'class="'.implode(" ", $class).'"';
+    } else {
+      $class= '';
+    }
+
+    $breadcrumb_items .= '<li '.$class.'>' . $name . '</li>';
+  }
+
+  if($breadcrumb_items != ''){
+    $breadcrumb_items = '<ul class="breadcrumbs">'.$breadcrumb_items.'</ul><div style="clear:both;"></div>';
+  }
+
+  return $breadcrumb_items;
+}
+
+/**
 * Implements theme_image_formatter().
 */
 function unsw_image_formatter($variables) {

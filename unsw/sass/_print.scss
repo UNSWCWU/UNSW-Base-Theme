@@ -14,7 +14,7 @@
   /* Underline all links. */
   a:link,
   a:visited {
-    text-decoration: underline !important;
+    text-decoration: none !important;
 
     /* Don't underline header. */
     &.header__site-link {

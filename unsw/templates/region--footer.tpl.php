@@ -10,6 +10,5 @@
 <?php if ($content): ?>
   <div id="footer" class="<?php print $classes; ?>">
     <?php print $content; ?>
-    <p id="back-to-top"><a href="#top">Back to top</a></p>
   </div>
 <?php endif; ?>
