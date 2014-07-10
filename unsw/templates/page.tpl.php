@@ -13,7 +13,7 @@
   <div id="header-inner">
 
     <?php if ($logo): ?>
-      <a href="http://unsw.edu.au" title="<?php print t('UNSW'); ?>" rel="UNSW" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('UNSW'); ?>" class="header__logo-image" /></a>
+      <a href="http://unsw.edu.au" title="<?php print t('UNSW Australia'); ?>" rel="UNSW Australia" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('UNSW Australia'); ?>" class="header__logo-image" /></a>
     <?php endif; ?>
 
     <?php if ($site_name || $site_slogan): ?>
