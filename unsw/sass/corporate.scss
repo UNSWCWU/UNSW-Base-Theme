@@ -81,6 +81,18 @@ a{
 
 
 /* Main Menu */
+.slicknav_menu {
+  display:none;
+}
+@media all and (max-width: 706px){
+  .js #block-nice-menus-1 {
+		display:none;
+	}
+  .js .slicknav_menu {
+		display:block;
+	}
+}
+
 #navigation{
   @include background-image(linear-gradient($darkestgrey, $darkgrey));
   height: 40px;
