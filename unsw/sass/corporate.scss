@@ -20,16 +20,17 @@ a{
 /* Corporate header*/
 #header{
   border-bottom: 10px solid $corporate-yellow;
-  min-height: 110px;
+  min-height: 90px;
   background-color: white;
-  width: 1170px;
+  /*width: 1170px*/;
+  width: 100%;
   padding: 0;
   margin: 0 auto;
   position: relative;
   #header-inner{
     max-width: $content-max;
     position: relative;
-    margin: 20px auto;
+    margin: 20px 30px;
     overflow: hidden;
   }
   #logo{
@@ -53,29 +54,54 @@ a{
     }
   }
 }
-@media all and (max-width: 640px){
+@media all and (max-width: 550px){
   #header{
     text-align: center;
     #logo{
-      float: none;
-      border: none;
-      margin-right: 0;
-      padding-right: 0;
+      float: left;
+      margin-right: 20px;
+      padding-right: 20px;
+      width: 50%;
+      height: auto !important;
       img{
-        width: 191px;
-        height: 70px;
+        /*width: 80%;
+        height: auto !important;*/
       }
     }
     #name-and-slogan{
-      clear: both;
-      float: none;
+      float: left;
+      width: 30%;
+      padding-top: 0;
+      h1{
+        line-height: 1em;
+        font-size: 2.5em;
+      }
     }
-    #block-unswsearchbox-header-search{
-      clear: both;
-      float: none;
-      margin-left: auto;
-      margin-right: auto;
+  }
+}
+@media all and (max-width: 453px){
+  #header{
+    #logo{
+      margin-right: 0px;
+      padding-right: 0px;
+      width: 100%;
+      border-right: none;
+      text-align: center;
     }
+    #name-and-slogan{
+      width: 100%;
+      padding-top: 20px;
+      h1{
+        font-size: 35px;
+        line-height: 1.42857em;
+        text-align: center;
+      }
+    }
+  }
+}
+@media all and (max-width: 320px){
+  #header #name-and-slogan h1{
+        font-size: 33px;
   }
 }
 
