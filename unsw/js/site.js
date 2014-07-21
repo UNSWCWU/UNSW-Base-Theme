@@ -5,6 +5,8 @@
         e.preventDefault();
         window.print();
       });
+	  
+	  $('#nice-menu-1').slicknav();
     
     }
   };
