@@ -53,11 +53,11 @@ $base-font-size:   13px; // The font size set on the root html element.
 $base-line-height: 16px; // This line-height determines the basic unit of vertical rhythm.
 
 $h1-font-size: 2    * $base-font-size;
-$h2-font-size: 1.5  * $base-font-size;
-$h3-font-size: 1.17 * $base-font-size;
-$h4-font-size: 1    * $base-font-size;
-$h5-font-size: 0.83 * $base-font-size;
-$h6-font-size: 0.67 * $base-font-size;
+$h2-font-size: 15px;
+$h3-font-size: 14px;
+$h4-font-size: $base-font-size;
+$h5-font-size: $base-font-size;
+$h6-font-size: $base-font-size;
 
 // The following font family declarations are based on the Microsoft core web
 // fonts which are common fonts available on most computer systems. The DejaVu
@@ -102,8 +102,8 @@ $block-background: #eeeeee;
 $darkgrey: #2e2e2e;
 $darkestgrey: #1e1e1e;
 $charcoal: #3e3e3e;
-$page-max: 1170px;
-$content-max: 1110px;
+$page-max: 980px;
+$content-max: 980px;
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;

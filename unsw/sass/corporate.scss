@@ -38,7 +38,6 @@ hr{
   border-bottom: 10px solid $corporate-yellow;
   min-height: 90px;
   background-color: white;
-  /*width: 1170px*/;
   width: 100%;
   padding: 0;
   margin: 0 auto;
@@ -46,7 +45,7 @@ hr{
   #header-inner{
     max-width: $content-max;
     position: relative;
-    margin: 20px 30px;
+    margin: 20px;
     overflow: hidden;
   }
   #logo{
@@ -86,32 +85,32 @@ hr{
   padding: 0;
   position: relative;
   width: 100%;
-  height: auto !important;
+  height: 34px;
 }
 .slicknav_menu {
 	display:none;
 }
 /* Main menu */
-#block-nice-menus-1{
+.block-nice-menus{
   @include background-image(linear-gradient($darkestgrey, $darkgrey));
-  min-height: 40px;
+  min-height: 34px;
   padding: 0;
   ul.nice-menu{
     width: 100%;
     li.first {
-      background: transparent url("../images/navmenu/home.png") no-repeat 23px 12px;
+      background: transparent url("../images/navmenu/home.png") no-repeat 20px 8px;
       a{
         text-indent: -1000px;
         padding: 0;
         width: 60px;
         &:hover, &:hover.active{
-          background: #fac800 url("../images/navmenu/home-active.png") no-repeat 23px 12px;
+          background: #fac800 url("../images/navmenu/home-active.png") no-repeat 20px 8px;
           -webkit-box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
           -moz-box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
           box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
         }
         &.active{
-          background: transparent url("../images/navmenu/home.png") no-repeat 23px 12px;
+          background: transparent url("../images/navmenu/home.png") no-repeat 20px 8px;
           -webkit-box-shadow: none;
           -moz-box-shadow: none;
           box-shadow: none;
@@ -124,7 +123,7 @@ hr{
         text-decoration: none;
         text-shadow: 0 -1px 0 #121314; 
         font-size: 1.0em;
-        line-height: 40px;
+        line-height: 34px;
         padding: 0 23px;
         text-align: center;
         display: block;
@@ -741,29 +740,22 @@ p#back-to-top{
   }
 }
 
-
-
 /****** RESPONSIVE SCREEN SIZES ******/
 
 /** HEADER **/
-@media all and (max-width: 550px){
+@media all and (max-width: 640px){
   #header{
     text-align: center;
     #logo{
-      float: left;
-      margin-right: 20px;
-      padding-right: 20px;
-      width: 50%;
-      height: auto !important;
+      margin-right: 10px;
+      padding-right: 10px;
       img{
-        /*width: 80%;
-        height: auto !important;*/
+        width: 191px;
+        height: 70px;
       }
     }
     #name-and-slogan{
-      float: left;
-      width: 30%;
-      padding-top: 0;
+      /* padding-top: 0px; // uncomment if header wraps and you need to move up the title */
       h1{
         line-height: 1em;
         font-size: 2.5em;
@@ -771,7 +763,7 @@ p#back-to-top{
     }
   }
 }
-@media all and (max-width: 453px){
+@media all and (max-width: 480px){
   #header #header-inner{
     margin: 10px 30px;
     #logo{
@@ -801,7 +793,7 @@ p#back-to-top{
 
 
 /** SEARCH BOX **/
-@media all and (max-width: 853px){
+@media all and (max-width: 720px){
   #block-unswsearchbox-header-search{
     display: none;
   }
@@ -809,61 +801,8 @@ p#back-to-top{
 
 
 /** NAV MENU **/
-@media all and (max-width: 1070px){
-  #block-nice-menus-1{
-    min-height: 80px;
-    ul.nice-menu li a{
-      min-height: 80px;
-    }
-  }
-}
-@media all and (max-width: 855px){
-  #block-nice-menus-1{
-    min-height: 65px;
-    ul.nice-menu{
-      li a{
-        min-height: 50px;
-        line-height: 20px;
-        padding-top: 15px;
-      }
-      li.first{
-        background: transparent url("../images/navmenu/home.png") no-repeat 18px 18px;
-        a{
-          padding-top: 15px;
-          &:hover, &:hover.active{
-            background: #fac800 url("../images/navmenu/home-active.png") no-repeat 18px 18px;
-            -webkit-box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
-            -moz-box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
-            box-shadow: inset 0px 8px 18px -11px rgba(0,0,0,0.75);
-          }
-          &.active{
-            background: transparent url("../images/navmenu/home.png") no-repeat 18px 18px;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            box-shadow: none;
-          }
-        }
-      }
-      li:nth-child(2) a{
-        padding-top: 15px;
-      }
-      li:nth-child(3) a{
-        padding-top: 15px;
-      }
-      li:nth-child(4) a{
-        padding-top: 15px;
-      }
-      li:nth-child(5) a{
-        padding-top: 15px;
-      }
-      li:nth-child(6) a{
-        padding-top: 15px;
-      }
-    }
-  }
-}
-@media all and (max-width: 706px){
-  .js #block-nice-menus-1 {
+@media all and (max-width: 720px){
+  .js .block-nice-menus {
 		display:none;
 	}
   .js .slicknav_menu {
@@ -872,142 +811,7 @@ p#back-to-top{
 }
 
 
-
-
-/** BANNER **/
-@media all and (max-width: 650px){
-  .banner-block-wrapper{
-    bottom: 50px;
-  }
-  #widget_pager_bottom_banner-block{
-    bottom: 60px;
-  }
-}
-@media all and (max-width: 590px){
-  .banner-block-wrapper{
-    bottom: 40px;
-  }
-  #widget_pager_bottom_banner-block{
-    bottom: 50px;
-  }
-}
-@media all and (max-width: 540px){
-  .banner-block-wrapper{
-    position: relative;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-  }
-  #widget_pager_bottom_banner-block{
-    bottom: 10px;
-  }
-}
-@media all and (max-width: 520px){
-  #widget_pager_bottom_banner-block{
-    bottom: 10px;
-    width: 100%;
-    left: 0;
-    .views-slideshow-pager-field-item.views-row-last{
-      padding-right: 30px;
-    }
-  }
-  .banner-block-wrapper{
-    background: none;
-  }
-  .views-slideshow-cycle-main-frame{
-    background: url("../images/banner/banner-bg.png") repeat 0 0;
-  }
-}
-
-
-
-/** 2ND SIDE BAR **/
-@media all and (max-width: 959px){
-  .front.two-sidebars .region-sidebar-second{
-    padding-left: 30px;
-    margin-right: 0;
-    .block{
-      margin-left: 0;
-      margin-right: 20px;
-      clear: none;
-      /*padding: 20px 20px 10px 20px;*/
-      width: 30.8%;
-    }
-    .block-id-4, .block-id-7, .block-id-10{
-      clear: left;
-    }
-  }
-}
-@media all and (max-width: 860px){
-  .front.two-sidebars .region-sidebar-second{
-    .block{
-      width: 47%;
-    }
-    .block-id-1{
-      clear: none;
-    }
-    .odd{
-      clear: left;
-    }
-    .even{
-      clear: none;
-    }
-  }
-}
-@media all and (max-width: 730px){
-  .front.two-sidebars .region-sidebar-second{
-    .block{
-      width: 46%;
-    }
-  }
-}
-@media all and (max-width: 647px){
-  .front.two-sidebars .region-sidebar-second{
-    padding-top: 0;
-    .block{
-      /*width: 93%;*/
-      width: 100%;
-    }
-    .last{
-      margin-bottom: 0;
-    }
-  }
-  .region-sidebar-second{
-    padding: 0 30px;
-  }
-}
-@media all and (max-width: 585px){
-  .front.two-sidebars .region-sidebar-second{
-    .block{
-      /*width: 91%;*/
-    }
-  }
-}
-@media all and (max-width: 485px){
-  .front.two-sidebars .region-sidebar-second{
-    .block{
-      /*width: 89%;*/
-    }
-    .last{
-      margin-bottom: 20px;
-    }
-  }
-}
-@media all and (max-width: 350px){
-  .front.two-sidebars .region-sidebar-second{
-    .block{
-      /*width: 84%;*/
-    }
-    .first{
-      margin-top: 0;
-    }
-  }
-}
-
-
-
 /** MAIN CONTENT **/
-
 
 
 /** FOOTER **/
