@@ -30,21 +30,6 @@
       </div>
     <?php endif; ?>
 
-    <?php if ($secondary_menu): ?>
-      <nav class="header__secondary-menu" id="secondary-menu" role="navigation">
-        <?php print theme('links__system_secondary_menu', array(
-          'links' => $secondary_menu,
-          'attributes' => array(
-            'class' => array('links', 'inline', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => $secondary_menu_heading,
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-      </nav>
-    <?php endif; ?>
 
     <?php print render($page['header']); ?>
   </div>
@@ -54,37 +39,6 @@
 
   <div id="main">
     
-    <?php if ($is_front): ?> 
-      <?php if ($page['banner']): ?>        
-        <?php print render($page['banner']); ?>
-      <?php endif; ?>
-    <?php endif; ?> 
-
-    <div id="content" class="column" role="main">
-      <?php print render($page['highlighted']); ?>
-      <?php if (!$is_front): ?>
-        <?php if ($breadcrumb): ?>
-          <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-        <?php endif; ?>
-      <?php endif; ?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if (!$is_front): ?>
-        <?php if ($title): ?>
-          <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-        <?php endif; ?>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php print render($tabs); ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
-    </div>
-
     <div id="navigation">
 
       <?php if ($main_menu): ?>
@@ -111,6 +65,40 @@
       <?php print render($page['navigation']); ?>
 
     </div>
+    
+    <?php if ($is_front): ?> 
+      <?php if ($page['banner']): ?>        
+        <?php print render($page['banner']); ?>
+      <?php endif; ?>
+    <?php endif; ?> 
+
+    <div id="content" class="column" role="main">
+      <?php print render($page['highlighted']); ?>
+      <?php if (!$is_front): ?>
+        <?php if ($breadcrumb): ?>
+          <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+        <?php endif; ?>
+      <?php endif; ?>
+      <a id="main-content"></a>
+      <?php print render($title_prefix); ?>
+      <?php if (!$is_front): ?>
+        <?php if ($title): ?>
+          <h1 class="page__title title" id="page-title">
+              <?php print $alternate_title; ?>
+          </h1>
+        <?php endif; ?>
+      <?php endif; ?>
+      <?php print render($title_suffix); ?>
+      <?php print $messages; ?>
+      <?php print render($tabs); ?>
+      <?php print render($page['help']); ?>
+      <?php if ($action_links): ?>
+        <ul class="action-links"><?php print render($action_links); ?></ul>
+      <?php endif; ?>
+      <?php print render($page['content']); ?>
+      <?php print $feed_icons; ?>
+    </div>
+
 
     <?php
       // Render the sidebars to see if there's anything in them.
