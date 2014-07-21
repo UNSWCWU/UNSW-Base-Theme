@@ -84,7 +84,7 @@
       <?php if (!$is_front): ?>
         <?php if ($title): ?>
           <h1 class="page__title title" id="page-title">
-              <?php print $alternate_title; ?>
+              <?php print $title; ?>
           </h1>
         <?php endif; ?>
       <?php endif; ?>

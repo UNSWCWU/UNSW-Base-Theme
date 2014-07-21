@@ -1,4 +1,10 @@
-/* Basic page stuff */
+/* 
+Defines branded header, navigation bar and footer.
+
+Please add your own site-specific CSS to site.scss
+
+*/
+
 @import "init";
 
 body{
@@ -69,15 +75,6 @@ hr{
     }
   }
 }
-.node-id-block{
-  position: absolute;
-  top: 40%;
-  right: 30%;
-  margin-bottom: 0;
-}
-
-
-
 
 
 /* Main Menu */
@@ -85,10 +82,19 @@ hr{
   padding: 0;
   position: relative;
   width: 100%;
-  height: 34px;
+  min-height: 34px;
+  height: 100%;
 }
 .slicknav_menu {
 	display:none;
+}
+.slicknav_nav a,
+.slicknav_nav .slicknav_row{
+  margin: 0 !important;
+}
+.slicknav_nav a:hover,
+.slicknav_nav .slicknav_row:hover{
+  background: #999 !important;
 }
 /* Main menu */
 .block-nice-menus{
@@ -121,7 +127,8 @@ hr{
       a{
         color: #FFFFFF;
         text-decoration: none;
-        text-shadow: 0 -1px 0 #121314; 
+        font-weight: bold;
+        /*text-shadow: 0 -1px 0 #121314;*/
         font-size: 1.0em;
         line-height: 34px;
         padding: 0 23px;
@@ -229,34 +236,6 @@ ul.breadcrumbs li.last span {
     }
   }
 }
-.region-sidebar-second .block.image-block .block-content-wrapper{
-  padding: 0;
-}
-.front .region-sidebar-second{
-  padding-top: 1.42857em;
-}
-/* Next Steps block */
-.next-steps-block{
-  background-image: -webkit-linear-gradient(#FFD840, #FFCC00);
-  background-image: -o-linear-gradient(#FFD840, #FFCC00);
-  background-image: -moz-linear-gradient(#FFD840, #FFCC00);
-  background-image: -ms-linear-gradient(#FFD840, #FFCC00);
-  background-image: linear-gradient(#FFD840, #FFCC00);
-  p{
-    a{
-      display: inline-block;
-      padding-left: 30px;
-      color: #231f20;
-      font-size: 1.2857em;
-      background: url("../images/icons/arrow-next-steps.png") no-repeat left center;
-    }
-  }
-}
-
-
-
-
-
 
 
 /* Corporate Banner Section */
@@ -266,84 +245,6 @@ ul.breadcrumbs li.last span {
   padding: 0;
   position: relative;
 }
-#block-views-banner-block.block{
-  margin: 0;
-}
-.view-banner{
-  position: relative;
-  a:hover{
-    text-decoration: none;
-  }
-  img{
-    display: block;
-    height: auto !important;
-    width: 100%;
-  }
-}
-.banner-block-wrapper{
-  position: absolute;
-  background: url("../images/banner/banner-bg.png") repeat 0 0;
-  left: 30px;
-  bottom: 90px;
-  width: 460px;
-  /*width: 34.19%;*/
-  text-transform: uppercase;
-  .banner-block-content{
-    padding: 30px;
-    position: relative;
-    .banner-block-title{
-      font-size: 1.714em;
-      color: #a3ecdd;
-      /*max-width: 300px;*/
-      max-width: 75%;
-      padding-bottom: 15px;
-    }
-    .banner-block-text{
-      font-size: 1.2857em;
-      color: #fff;
-      /*max-width: 300px;*/
-      max-width: 75%;
-      padding-bottom: 10px;
-    }
-    .banner-block-play{
-      position: absolute;
-      bottom: 45px;
-      right: 30px;
-      width: 71px;
-      height: 70px;
-      background: url("../images/banner/banner-play.png") repeat 0 0;
-    }
-  }
-}
-/* Slideshow counter/pager */ 
-#widget_pager_bottom_banner-block {
-    bottom: 100px;
-    /*right: 705px;*/
-    left: 65px;
-    position: absolute;
-    text-align: right;
-    width: 400px;
-    /*width: 34.19%;*/
-    z-index: 10;
-    .views-field-counter {
-      display: none;
-    }
-    .views_slideshow_pager_field_item{
-      background: url("../images/banner/banner-pager-normal.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-      display: inline-block;
-      height: 11px;
-      padding: 0 2px;
-      text-indent: -999%;
-      width: 12px;
-      &.active, &:hover{
-        background: url("../images/banner/banner-pager-active.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-        cursor: pointer;
-      }
-    }
-}
-
-
-
 
 
 /* Corporate Main Content */

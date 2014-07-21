@@ -5,7 +5,7 @@
         e.preventDefault();
         window.print();
       });
-	  
+	  /* Make sure this is the ID of the menu you want to be responsive */
 	  $('#nice-menu-1').slicknav();
     
     }
