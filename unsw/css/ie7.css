@@ -12,7 +12,7 @@
 
 .two-sidebars #page #main .column#content{
   float: left;
-  width: 780px;
+  width: 420px;
   padding-left: 323px;
 }
 
@@ -41,4 +41,10 @@
 /** Searchbox Buttons **/
 .block-unswsearchbox .form-radios{
   clear: right;
+}
+
+
+/** Image Styles **/
+img{
+  max-width: none;
 }
