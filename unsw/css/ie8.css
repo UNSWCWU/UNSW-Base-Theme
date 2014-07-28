@@ -1,0 +1,44 @@
+
+#page #main{
+  position: relative;
+}
+
+.two-sidebars #page #main .sidebars .region-sidebar-first{
+  width: 260px;
+  position: absolute;
+  top: 519px;
+  left: 0px;
+}
+
+.two-sidebars #page #main .column#content{
+  float: left;
+  width: 420px;
+  padding-left: 323px;
+}
+
+.two-sidebars #page #main .sidebars .region-sidebar-second{
+  float: right;
+  width: 360px;
+}
+
+.one-sidebar #page #main .column#content{
+  float: left;
+  width: 720px;
+}
+
+.one-sidebar #page #main .sidebars .region-sidebar-second{
+  float: right;
+  width: 360px;
+}
+
+.region-footer{
+  clear: both;
+  display: block;
+  height: 100%;
+}
+
+
+/** Searchbox Buttons **/
+.block-unswsearchbox .form-radios{
+  clear: right;
+}
